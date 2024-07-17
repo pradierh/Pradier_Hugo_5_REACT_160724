@@ -1,0 +1,14 @@
+import React from "react";
+import logo from "../assets/logoblackandwhite.png";
+function Footer() {
+	return (
+		<footer>
+			<img src={logo} alt="Logo" />
+			<p>
+				<i class="fa-regular fa-copyright"></i>2020 All rights reserved.
+			</p>
+		</footer>
+	);
+}
+
+export default Footer;
