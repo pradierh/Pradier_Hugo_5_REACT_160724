@@ -4,9 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 const App = () => {
-	return (
-		<Home />
-	);
+	return <Home />;
 };
 
 export default App;
