@@ -5,8 +5,8 @@ import locations from "../data/data.json";
 function CardsContainer() {
 	return (
 		<div className="cards-container">
-			{locations.map((location) => (
-				<Cards key={location.id} location={location} />
+			{locations.map((item) => (
+				<Cards key={item.id} location={item} />
 			))}
 		</div>
 	);
