@@ -6,7 +6,7 @@ import Collapsible from "../components/About/Collapsible";
 
 const About = () => {
 	return (
-		<>
+		<div className="about">
 			<div className="container">
 				<Header />
 				<Banner />
@@ -37,7 +37,7 @@ const About = () => {
 				</Collapsible>
 			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

@@ -6,7 +6,6 @@ import {
 	Link,
 	Navigate,
 } from "react-router-dom";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Housing from "./pages/Housing";
@@ -16,9 +15,10 @@ const App = () => {
 	return (
 		<div>
 			<Routes>
+				<Route path="*" element={<Navigate to="/notfound" />} />
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
-				<Route path="*" element={<Navigate to="/pages/NotFound" />} />
+				<Route path="/notfound" element={<NotFound />} />
 				<Route path="/logement/:id" element={<Housing />} />;
 			</Routes>
 		</div>

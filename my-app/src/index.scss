@@ -89,6 +89,19 @@ footer {
 
 /* ------------------- ABOUT ------------------------ */
 
+.about {
+	.banner {
+		width: 100%;
+		height: 223px;
+		border-radius: 15px;
+		background-image: url("./assets/backgroundimagebannerabout.png");
+		background-size: cover;
+		background-position: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
 .collapsible-card-edonec {
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -210,6 +223,9 @@ footer {
 				.fa-star {
 					color: #ff6060;
 				}
+				.void {
+					color: darkblue !important;
+				}
 			}
 		}
 	}
@@ -219,6 +235,21 @@ footer {
 	}
 }
 
-.void {
-	color: darkblue !important;
+/* ------------------- ERROR ------------------------ */
+.error {
+	.error-message {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		h1 {
+			color: #ff6060;
+		}
+		h2 {
+			color: #ff6060;
+		}
+		span {
+			color: black;
+		}
+	}
 }

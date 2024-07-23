@@ -65,11 +65,3 @@ const Collapsible = ({
 };
 
 export default Collapsible;
-
-// {
-// 	!isOpen ? (
-// 		<i className="fa-solid fa-caret-up"></i>
-// 	) : (
-// 		<i className="fa-solid fa-caret-down"></i>
-// 	);
-// }
