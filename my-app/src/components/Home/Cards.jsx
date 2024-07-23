@@ -3,7 +3,8 @@ import React from "react";
 function Cards({location}) {
     return (
         <div className="cards">
-            <h3>{location.title}</h3>
+            <img src={location.cover}></img>
+            <h2>{location.title}</h2>
         </div>
 	);
 }

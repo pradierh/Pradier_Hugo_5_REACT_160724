@@ -1,3 +1,5 @@
+/* ------------------- GLOBAL ------------------------ */
+
 body {
 	font-family: Arial, sans-serif;
 	color: white;
@@ -5,28 +7,27 @@ body {
 	padding: 0;
 }
 
-nav ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-nav li {
-	display: inline;
-	margin-right: 10px;
-}
-
-nav a {
-	color: black;
-	text-decoration: none;
+.container {
+	margin: 0 100px;
 }
 
 header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	nav ul {
-		display: flex;
-		flex-direction: row;
+	nav {
+		ul {
+			display: flex;
+			flex-direction: row;
+			list-style-type: none;
+			padding: 0;
+			li {
+				color: black;
+				text-decoration: none;
+				display: inline;
+				margin-right: 10px;
+			}
+		}
 	}
 }
 
@@ -42,40 +43,52 @@ footer {
 	}
 }
 
-.container {
-	margin: 0 100px;
+/* ------------------- HOME ------------------------ */
+
+.home {
+	.banner {
+		width: 100%;
+		height: 223px;
+		border-radius: 15px;
+		background-image: url("./assets/backgroundimagebanner.png");
+		background-size: cover;
+		background-position: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.cards-container {
+		width: 100%;
+		background-color: #f6f6f6;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 10px;
+		.cards {
+			position: relative;
+			background-color: #ff6060;
+			height: 467px;
+			width: 467px;
+			border-radius: 10px;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: 10px;
+				object-fit: cover;
+			}
+			h2 {
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+		}
+	}
 }
 
-.banner {
-	width: 100%;
-	height: 223px;
-	border-radius: 15px;
-	background-image: url("./assets/backgroundimagebanner.png");
-	background-size: cover;
-	background-position: right;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+/* ------------------- ABOUT ------------------------ */
 
-.cards {
-	background-color: #ff6060;
-	height: 467px;
-	width: 467px;
-	border-radius: 10px;
-}
-
-.cards-container {
-	width: 100%;
-	background-color: #f6f6f6;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	gap: 10px;
-}
-
-/* Style the button that is used to open and close the collapsible content */
 .collapsible {
 	background-color: #eee;
 	color: #444;
@@ -88,16 +101,76 @@ footer {
 	font-size: 15px;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.collapsible:hover {
-	background-color: #ccc;
-}
-
-/* Style the collapsible content. Note: hidden by default */
 .content {
 	padding: 0 18px;
 	display: none;
 	overflow: hidden;
 	background-color: #f1f1f1;
+}
+
+/* ------------------- HOUSING ------------------------ */
+
+.housing {
+	.caroussel {
+		img {
+			width: 100%;
+			height: 414px;
+			object-fit: cover;
+			border-radius: 25px;
+		}
+	}
+	.info-panel {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		.left-info-panel {
+			.title {
+				display: flex;
+				flex-direction: column;
+				h1 {
+					color: #ff6060;
+				}
+				h2 {
+					color: black;
+				}
+			}
+			.tags {
+				display: flex;
+				flex-direction: row;
+				.tag {
+					p {
+						color: white;
+						border-radius: 10px;
+						background-color: #ff6060;
+						padding: 3px 30px;
+					}
+				}
+			}
+		}
+		.right-info-panel {
+			display: flex;
+			flex-direction: column;
+			.owner {
+				display: flex;
+				flex-direction: row;
+				.owner-name {
+					display: flex;
+					flex-direction: column;
+					p {
+						color: #ff6060;
+					}
+				}
+				.owner-picture {
+					img {
+						clip-path: circle();
+					}
+				}
+			}
+			.rating {
+				.fa-star {
+					color: #ff6060;
+				}
+			}
+		}
+	}
 }

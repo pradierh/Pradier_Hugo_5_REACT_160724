@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
-import Banner from "../components/Banner.jsx";
-import CardsContainer from "../components/CardsContainer.jsx";
-
+import Header from "../components/Global/Header";
+import Footer from "../components/Global/Footer";
+import Banner from "../components/Home/Banner.jsx";
+import CardsContainer from "../components/Home/CardsContainer.jsx";
 
 const Home = () => {
 	return (
-		<div>
+		<div className="home">
 			<div className="container">
 				<Header />
 				<Banner />
