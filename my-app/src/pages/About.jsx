@@ -10,20 +10,30 @@ const About = () => {
 			<div className="container">
 				<Header />
 				<Banner />
-				<Collapsible
-					open
-					title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-				>
-					Consectetur adipiscing elit pellentesque habitant morbi
-					tristique. Pulvinar pellentesque habitant morbi tristique.
-					Vel quam elementum pulvinar etiam. Pulvinar pellentesque
-					habitant morbi tristique senectus et netus et. Elementum
-					integer enim neque volutpat. Faucibus in ornare quam viverra
-					orci sagittis. Amet volutpat consequat mauris nunc congue
-					nisi vitae suscipit. Dui accumsan sit amet nulla. Proin
-					sagittis nisl rhoncus mattis. Enim nulla aliquet porttitor
-					lacus. Arcu odio ut sem nulla pharetra diam sit amet.
-					Gravida rutrum quisque non tellus orci ac auctor augue
+				<Collapsible close header="Fiabilité">
+					Les annonces postées sur Kasa garantissent une fiabilité
+					totale. Les photos sont conformes aux logements, et toutes
+					les informations sont régulièrement vérifiées pas nos
+					équipes.
+				</Collapsible>
+				<Collapsible close header="Respect">
+					La bienveillance fait partie des valeurs fondatrices de
+					Kasa. Tout comportement discrinatoire ou de perturbation du
+					voisinage entraînera une exclusion de notre plateforme.
+				</Collapsible>
+				<Collapsible close header="Service">
+					La bienveillance fait partie des valeurs fondatrices de
+					Kasa. Tout comportement discrinatoire ou de perturbation du
+					voisinage entraînera une exclusion de notre plateforme.
+				</Collapsible>
+				<Collapsible close header="Sécurité">
+					La sécurité est la priorité de Kasa. Aussi bien pour nos
+					hôtes que pour les voyageurs, chaque logement correspond aux
+					critères de sécurité établis par nos services. En laissant
+					une note aussi bien à l'hôte qu'au locatiare, cela permet à
+					ns équipes de vérifier que les standards sont bien
+					respectés. Nous organisons également des ateliers sur la
+					sécurité domestique pour nos hôtes.
 				</Collapsible>
 			</div>
 			<Footer />

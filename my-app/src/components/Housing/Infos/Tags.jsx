@@ -1,17 +1,14 @@
 import React from "react";
 
-function Tags() {
+function Tags(props) {
+	var tags = props.array;
 	return (
 		<div className="tags">
-			<div className="tag">
-				<p>Cozy</p>
-			</div>
-			<div className="tag">
-				<p>Canal</p>
-			</div>
-			<div className="tag">
-				<p>Paris 10</p>
-			</div>
+			{tags.map((item) => (
+				<div key={item} className="tag">
+					<p>{item}</p>
+				</div>
+			))}
 		</div>
 	);
 }

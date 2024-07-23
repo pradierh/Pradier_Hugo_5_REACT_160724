@@ -7,10 +7,20 @@ import Title from "../components/Housing/Infos/Title.jsx";
 import Tags from "../components/Housing/Infos/Tags.jsx";
 import Owner from "../components/Housing/Infos/Owner.jsx";
 import Rating from "../components/Housing/Infos/Rating.jsx";
-
+import Collapsible from "../components/About/Collapsible.jsx";
 import data from "../data/data.json";
 
 const Housing = () => {
+	const { id } = useParams();
+	const [housing, setHousing] = useState(null);
+	useEffect(() => {
+		const foundHousing = data.find((location) => location.id === id);
+		setHousing(foundHousing);
+	}, [id]);
+
+	if (!housing) {
+		return <div>Logement non trouvé</div>;
+	}
 	return (
 		<div className="housing">
 			<div className="container">
@@ -18,13 +28,27 @@ const Housing = () => {
 				<Caroussel />
 				<div className="info-panel">
 					<div className="left-info-panel">
-						<Title />
-						<Tags />
+						<Title
+							title={housing.title}
+							subtitle={housing.location}
+						/>
+						<Tags array={housing.tags} />
 					</div>
 					<div className="right-info-panel">
-						<Owner />
-						<Rating />
+						<Owner
+							name={housing.host.name}
+							image={housing.host.picture}
+						/>
+						<Rating number={housing.rating} />
 					</div>
+				</div>
+				<div className="collapsibles">
+					<Collapsible close header="Description">
+						{housing.description}
+					</Collapsible>
+					<Collapsible close header="Equipements">
+						{housing.equipments}
+					</Collapsible>
 				</div>
 			</div>
 			<Footer />

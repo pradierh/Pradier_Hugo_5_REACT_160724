@@ -1,38 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const Collapsible = ({ open = false, children, title }) => {
+const Collapsible = ({
+	open = false,
+	collapsibleClassName = "collapsible-card-edonec",
+	headerClassName = "collapsible-header-edonec",
+	titleClassName = "title-text-edonec",
+	iconButtonClassName = "collapsible-icon-button-edonec",
+	contentClassName = "collapsible-content-edonec",
+	contentContainerClassName = "collapsible-content-padding-edonec",
+	children,
+	header,
+}) => {
 	const [isOpen, setIsOpen] = useState(open);
+	const [height, setHeight] = useState(open ? undefined : 0);
+	const ref = useRef(null);
 
 	const handleFilterOpening = () => {
 		setIsOpen((prev) => !prev);
 	};
 
-	return (
-		<>
-			<div className="card">
-				<div>
-					<div className="p-3 border-bottom d-flex justify-content-between">
-						<h6 className="font-weight-bold">{title}</h6>
-						<button
-							type="button"
-							className="btn"
-							onClick={handleFilterOpening}
-						>
-							{!isOpen ? (
-								<i className="fa-solid fa-caret-up"></i>
-							) : (
-								<i className="fa-solid fa-caret-down"></i>
-							)}
-						</button>
-					</div>
-				</div>
+	useEffect(() => {
+		if (!height || !isOpen || !ref.current) return undefined;
+		const resizeObserver = new ResizeObserver((entries) => {
+			setHeight(entries[0].contentRect.height);
+		});
+		resizeObserver.observe(ref.current);
+		return () => {
+			resizeObserver.disconnect();
+		};
+	}, [height, isOpen]);
 
-				<div className="border-bottom">
-					<div>{isOpen && <div className="p-3">{children}</div>}</div>
+	useEffect(() => {
+		if (isOpen) setHeight(ref.current?.getBoundingClientRect().height);
+		else setHeight(0);
+	}, [isOpen]);
+
+	return (
+		<div className={collapsibleClassName}>
+			<div>
+				<div className={headerClassName}>
+					<div className={titleClassName}>{header}</div>
+					<button
+						type="button"
+						className={iconButtonClassName}
+						onClick={handleFilterOpening}
+					>
+						<i
+							className={`fa-solid fa-caret-up ${
+								isOpen
+									? "fa-solid fa-caret-down"
+									: "fa-solid fa-caret-up"
+							}`}
+						/>
+					</button>
 				</div>
 			</div>
-		</>
+			<div className={contentClassName} style={{ height }}>
+				<div ref={ref}>
+					<div className={contentContainerClassName}>{children}</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 
 export default Collapsible;
+
+// {
+// 	!isOpen ? (
+// 		<i className="fa-solid fa-caret-up"></i>
+// 	) : (
+// 		<i className="fa-solid fa-caret-down"></i>
+// 	);
+// }

@@ -89,16 +89,56 @@ footer {
 
 /* ------------------- ABOUT ------------------------ */
 
-.collapsible {
-	background-color: #eee;
-	color: #444;
-	cursor: pointer;
-	padding: 18px;
-	width: 100%;
+.collapsible-card-edonec {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.collapsible-header-edonec {
+	background-color: #ff6060;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.title-text-edonec {
+	font-weight: bold;
+}
+
+.collapsible-icon-button-edonec {
+	background: none;
 	border: none;
-	text-align: left;
-	outline: none;
-	font-size: 15px;
+	cursor: pointer;
+}
+
+.collapsible-content-edonec {
+	color: black;
+	overflow: hidden;
+	transition: height 0.3s ease;
+}
+
+.collapsible-content-padding-edonec {
+	padding: 1rem;
+}
+
+.fas-edonec {
+	transform: rotate(0deg);
+	transition: transform 0.3s ease;
+}
+
+.fa-chevron-down-edonec.down {
+	transform: rotate(180deg);
+}
+
+.fa-chevron-down-edonec.up {
+	transform: rotate(0deg);
+}
+.rotate-center-edonec {
+	display: inline-block;
 }
 
 .content {
@@ -173,4 +213,12 @@ footer {
 			}
 		}
 	}
+	.collapsibles {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.void {
+	color: darkblue !important;
 }
