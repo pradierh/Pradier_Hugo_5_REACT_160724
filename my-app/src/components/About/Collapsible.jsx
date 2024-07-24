@@ -37,23 +37,21 @@ const Collapsible = ({
 
 	return (
 		<div className={collapsibleClassName}>
-			<div>
-				<div className={headerClassName}>
-					<div className={titleClassName}>{header}</div>
-					<button
-						type="button"
-						className={iconButtonClassName}
-						onClick={handleFilterOpening}
-					>
-						<i
-							className={`fa-solid fa-caret-up ${
-								isOpen
-									? "fa-solid fa-caret-down"
-									: "fa-solid fa-caret-up"
-							}`}
-						/>
-					</button>
-				</div>
+			<div className={headerClassName}>
+				<div className={titleClassName}>{header}</div>
+				<button
+					type="button"
+					className={iconButtonClassName}
+					onClick={handleFilterOpening}
+				>
+					<i
+						className={`fa-solid fa-caret-up ${
+							isOpen
+								? "fa-solid fa-caret-down"
+								: "fa-solid fa-caret-up"
+						}`}
+					/>
+				</button>
 			</div>
 			<div className={contentClassName} style={{ height }}>
 				<div ref={ref}>

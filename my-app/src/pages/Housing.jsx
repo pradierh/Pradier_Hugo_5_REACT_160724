@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Global/Header.jsx";
 import Footer from "../components/Global/Footer.jsx";
-import Caroussel from "../components/Housing/Caroussel.jsx";
+import Carousel from "../components/Housing/Carousel.jsx";
 import Title from "../components/Housing/Infos/Title.jsx";
 import Tags from "../components/Housing/Infos/Tags.jsx";
 import Owner from "../components/Housing/Infos/Owner.jsx";
@@ -25,7 +25,7 @@ const Housing = () => {
 		<div className="housing">
 			<div className="container">
 				<Header />
-				<Caroussel />
+				<Carousel images={housing.pictures} />
 				<div className="info-panel">
 					<div className="left-info-panel">
 						<Title
