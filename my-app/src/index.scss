@@ -4,7 +4,7 @@
 	padding: 0;
 }
 body {
-	font-family: Arial, sans-serif;
+	font-family: "Montserrat", sans-serif;
 	color: white;
 	margin: 0;
 	padding: 0;
@@ -289,6 +289,7 @@ footer {
 				}
 			}
 			.tags {
+				margin-top: 25px;
 				display: flex;
 				flex-direction: row;
 				.tag {
@@ -313,6 +314,8 @@ footer {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
+				justify-content: end;
+				margin-bottom: 25px;
 				.owner-name {
 					display: flex;
 					flex-direction: column;
@@ -328,17 +331,21 @@ footer {
 				}
 			}
 			.rating {
+				display: flex;
+				flex-direction: row;
 				.fa-star {
-					height: 24px;
+					margin-left: 15px;
+					font-size: 24px;
 					color: #ff6060;
 				}
 				.void {
-					color: grey !important;
+					color: #e3e3e3 !important;
 				}
 			}
 		}
 	}
 	.collapsibles {
+		margin-top: 25px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;

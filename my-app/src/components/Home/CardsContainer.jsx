@@ -11,6 +11,7 @@ function CardsContainer() {
 					<Link key={item.id} to={`/logement/${item.id}`}>
 						<Cards location={item} />
 					</Link>
+					
 				))}
 			</div>
 		</div>
