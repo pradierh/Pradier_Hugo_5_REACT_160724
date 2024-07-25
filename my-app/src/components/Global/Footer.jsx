@@ -6,7 +6,7 @@ function Footer() {
 			<img src={logo} alt="Logo" />
 			<p>
 				<i className="fa-regular fa-copyright"></i> 2020 All rights
-				reserved.
+				reserved
 			</p>
 		</footer>
 	);
