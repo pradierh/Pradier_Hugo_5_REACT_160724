@@ -1,4 +1,16 @@
 /* ------------------- GLOBAL ------------------------ */
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -123,6 +135,9 @@ footer {
 			flex-direction: row;
 			flex-wrap: wrap;
 			.cards {
+				overflow: hidden;
+				opacity: 0;
+				animation: fadeIn 0.5s ease forwards;
 				position: relative;
 				background-color: #ff6060;
 				height: 340px;
@@ -135,6 +150,7 @@ footer {
 					border-radius: 10px;
 					object-fit: cover;
 					z-index: 0;
+					transition: transform 0.3s ease;
 				}
 				.filter {
 					background: linear-gradient(
@@ -160,6 +176,9 @@ footer {
 					bottom: 20px;
 					left: 20px;
 				}
+			}
+			.cards:hover img {
+				transform: scale(1.1);
 			}
 		}
 	}
