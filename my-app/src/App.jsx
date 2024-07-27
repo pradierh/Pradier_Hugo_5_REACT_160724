@@ -18,7 +18,11 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/notfound" element={<NotFound />} />
-				<Route path="/logement/:id" element={<Housing />} />;
+				<Route path="/logement/:id" element={<Housing />} />
+				<Route
+					path="/logement/*"
+					element={<Navigate to="/notfound" />}
+				/>
 			</Routes>
 		</div>
 	);

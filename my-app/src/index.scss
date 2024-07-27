@@ -176,6 +176,13 @@ footer {
 				}
 			}
 		}
+		.cards-container :nth-last-child(2) {
+			margin-right: auto;
+		}
+		.cards-container :last-child {
+			margin-left: auto;
+			margin-right: 35%;
+		}
 	}
 }
 
@@ -471,6 +478,19 @@ footer {
 }
 
 /* --------------------- RESPONSIVTY ------------------------ */
+@media only screen and (max-width: 1439px) {
+	.home {
+		.cards-background {
+			.cards-container :nth-last-child(2) {
+				margin-right: 0px;
+			}
+			.cards-container :last-child {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+		}
+	}
+}
 
 /* Styles pour les écrans de taille moyenne (tablettes) */
 @media only screen and (max-width: 1024px) {
@@ -595,6 +615,8 @@ footer {
 	}
 	.home {
 		.banner {
+			margin-bottom: 22px;
+			filter: none;
 			height: 111px;
 			justify-content: flex-start;
 			h1 {
