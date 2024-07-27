@@ -1,16 +1,5 @@
 /* ------------------- GLOBAL ------------------------ */
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -24,6 +13,7 @@ body {
 
 .container {
 	max-width: 1240px;
+	min-height: 82vh;
 	padding: 0 100px;
 }
 
@@ -95,6 +85,7 @@ footer {
 
 .home {
 	.banner {
+		animation: fadeIn 0.5s ease forwards;
 		width: 100%;
 		height: 223px;
 		display: flex;
@@ -105,6 +96,7 @@ footer {
 		margin-top: 50px;
 		margin-bottom: 43px;
 		h1 {
+			padding: 0 16px;
 			text-decoration: none;
 			font-size: 48px;
 			font-weight: bold;
@@ -132,53 +124,56 @@ footer {
 			gap: 60px;
 			width: 92%;
 			display: flex;
+			justify-content: space-evenly;
 			flex-direction: row;
 			flex-wrap: wrap;
-			.cards {
-				overflow: hidden;
-				opacity: 0;
-				animation: fadeIn 0.5s ease forwards;
-				position: relative;
-				background-color: #ff6060;
-				height: 340px;
-				width: 340px;
-				border-radius: 10px;
-				img {
-					display: block;
-					width: 100%;
-					height: 100%;
+			a {
+				.cards {
+					overflow: hidden;
+					opacity: 0;
+					animation: fadeIn 0.5s ease forwards;
+					position: relative;
+					background-color: #ff6060;
+					height: 340px;
+					width: 340px;
 					border-radius: 10px;
-					object-fit: cover;
-					z-index: 0;
-					transition: transform 0.3s ease;
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						border-radius: 10px;
+						object-fit: cover;
+						z-index: 0;
+						transition: transform 0.3s ease;
+					}
+					.filter {
+						background: linear-gradient(
+							180deg,
+							rgba(228, 223, 209, 0) 0%,
+							rgba(0, 0, 0, 0.6419161414565826) 100%
+						);
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						bottom: 0px;
+						left: 0px;
+						border-radius: 10px;
+					}
+					h2 {
+						z-index: 2;
+						width: 50%;
+						text-decoration: none;
+						font-weight: 600;
+						font-size: 18px;
+						color: white;
+						position: absolute;
+						bottom: 20px;
+						left: 20px;
+					}
 				}
-				.filter {
-					background: linear-gradient(
-						180deg,
-						rgba(228, 223, 209, 0) 0%,
-						rgba(0, 0, 0, 0.6419161414565826) 100%
-					);
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					bottom: 0px;
-					left: 0px;
-					border-radius: 10px;
+				.cards:hover img {
+					transform: scale(1.1);
 				}
-				h2 {
-					z-index: 2;
-					width: 50%;
-					text-decoration: none;
-					font-weight: 600;
-					font-size: 18px;
-					color: white;
-					position: absolute;
-					bottom: 20px;
-					left: 20px;
-				}
-			}
-			.cards:hover img {
-				transform: scale(1.1);
 			}
 		}
 	}
@@ -188,6 +183,7 @@ footer {
 
 .about {
 	.banner {
+		animation: fadeIn 0.5s ease forwards;
 		width: 100%;
 		height: 223px;
 		border-radius: 15px;
@@ -208,7 +204,11 @@ footer {
 	}
 }
 
+.fa-2x {
+	font-size: 32px;
+}
 .collapsible-card-edonec {
+	animation: fadeIn 0.5s ease forwards;
 	width: 75%;
 	border-radius: 4px;
 	margin-bottom: 1rem;
@@ -221,12 +221,13 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+	padding: 13px;
 	border-radius: 10px;
 }
 
 .title-text-edonec {
 	font-weight: bold;
+	font-size: 18px;
 }
 
 .collapsible-icon-button-edonec {
@@ -242,6 +243,7 @@ footer {
 }
 
 .collapsible-content-padding-edonec {
+	font-size: 18px;
 	padding: 1rem;
 }
 
@@ -260,7 +262,9 @@ footer {
 .rotate-center-edonec {
 	display: inline-block;
 }
-
+.fa-chevron-up {
+	color: white;
+}
 .content {
 	padding: 0 18px;
 	display: none;
@@ -272,6 +276,7 @@ footer {
 
 .housing {
 	.carousel {
+		animation: fadeIn 0.5s ease forwards;
 		position: relative;
 		width: 100%;
 		height: 415px;
@@ -281,9 +286,10 @@ footer {
 
 		img {
 			width: 100%;
-			height: auto;
+			height: 100%;
 			bottom: 0px;
 			object-fit: cover;
+			border-radius: 25px;
 		}
 		.carousel__btn {
 			position: absolute;
@@ -309,6 +315,7 @@ footer {
 		}
 	}
 	.info-panel {
+		animation: fadeIn 0.5s ease forwards;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -329,10 +336,11 @@ footer {
 				}
 			}
 			.tags {
-				margin-top: 25px;
 				display: flex;
 				flex-direction: row;
 				.tag {
+					margin-top: 25px;
+					white-space: nowrap;
 					p {
 						font-size: 14px;
 						font-weight: bold;
@@ -371,6 +379,7 @@ footer {
 					}
 				}
 				.owner-picture {
+					display: flex;
 					img {
 						height: 64px;
 						clip-path: circle();
@@ -391,7 +400,7 @@ footer {
 			}
 		}
 	}
-	.collapsibles {
+	.collapsibles-container {
 		margin-top: 25px;
 		display: flex;
 		flex-direction: row;
@@ -405,10 +414,10 @@ footer {
 
 /* ------------------- ERROR ------------------------ */
 .notfound {
-	.container {
-		width: 73%;
-	}
 	.error {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		.error-message {
 			display: flex;
 			flex-direction: column;
@@ -436,6 +445,276 @@ footer {
 			a {
 				margin-bottom: 90px;
 				color: black;
+			}
+		}
+	}
+}
+
+/* ------------------- ANIMATION ------------------------ */
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.collapsible-icon-button-edonec.rotate i {
+	transition: transform 0.5s ease;
+}
+.collapsible-icon-button-edonec.rotate i {
+	transform: rotate(-180deg);
+}
+
+/* --------------------- RESPONSIVTY ------------------------ */
+
+/* Styles pour les écrans de taille moyenne (tablettes) */
+@media only screen and (max-width: 1024px) {
+	.container {
+		padding: 0 50px;
+	}
+
+	.housing {
+		.info-panel {
+			flex-direction: column;
+			.right-info-panel {
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				align-items: center;
+				.owner {
+					justify-content: normal;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-bottom: 0px;
+					margin-top: 16px;
+					margin-bottom: 13px;
+				}
+			}
+			.left-info-panel {
+				width: 100%;
+				.title {
+					h1 {
+						width: 75%;
+					}
+				}
+				.tags {
+					flex-wrap: wrap;
+					.tag {
+						p {
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+		}
+		.collapsibles-container {
+			flex-direction: column;
+			width: 100%;
+			margin-top: 0px;
+			.collapsible-card-edonec {
+				width: 100%;
+			}
+		}
+	}
+
+	.about {
+		.collapsibles-container {
+			.collapsible-card-edonec {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 905px) {
+	.home {
+		.cards-background {
+			padding-top: 0px;
+			background-color: white;
+			.cards-container {
+				width: 100%;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				a {
+					width: 100%;
+					.cards {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Styles pour les écrans de petite taille (smartphones) */
+@media only screen and (max-width: 600px) {
+	.container {
+		max-width: 1240px;
+		min-height: 82vh;
+		padding: 0 20px;
+	}
+
+	.fa-2x {
+		font-size: 26px;
+	}
+
+	.collapsible-content-padding-edonec {
+		font-size: 12px;
+	}
+	header {
+		height: 47px;
+		img {
+			height: 100%;
+			width: 145px;
+		}
+		nav {
+			li:first-child {
+				margin-right: 26px;
+			}
+			ul {
+				li {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+	footer {
+		margin-top: 0px;
+		padding-bottom: 60px;
+		p {
+			font-size: 14px;
+		}
+	}
+	.home {
+		.banner {
+			height: 111px;
+			justify-content: flex-start;
+			h1 {
+				width: 70%;
+				font-size: 24px;
+			}
+		}
+		.cards-background {
+			.cards-container {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 20px;
+				a {
+					width: 100%;
+					.cards {
+						width: 100%;
+						height: 255px;
+					}
+				}
+			}
+		}
+	}
+
+	.housing {
+		.carousel {
+			height: 255px;
+			margin-bottom: 15px;
+		}
+		.info-panel {
+			flex-direction: column;
+			.right-info-panel {
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				align-items: center;
+				.owner {
+					justify-content: normal;
+					.owner-name {
+						p {
+							font-size: 12px;
+						}
+					}
+					.owner-picture {
+						img {
+							height: 32px;
+						}
+					}
+				}
+				.rating {
+					.fa-star {
+						margin-left: 7px;
+						font-size: 14px;
+					}
+				}
+			}
+			.left-info-panel {
+				width: 100%;
+				.title {
+					h1 {
+						font-size: 18px;
+					}
+					h2 {
+						font-size: 14px;
+					}
+				}
+				.tags {
+					flex-wrap: wrap;
+					.tag {
+						margin-top: 10px;
+
+						p {
+							border-radius: 5px;
+							padding: 3px 20px;
+							font-size: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.notfound {
+		.error {
+			.error-message {
+				h1 {
+					margin-top: 90px;
+					font-size: 96px;
+				}
+				h2 {
+					font-weight: 500;
+					font-size: 18px;
+				}
+				span {
+					font-size: 14px;
+				}
+				a {
+					margin-bottom: 90px;
+					color: black;
+				}
+			}
+		}
+	}
+
+	.about {
+		.banner {
+			height: 111px;
+		}
+	}
+
+	.collapsibles-container {
+		flex-direction: column;
+		width: 100%;
+		margin-top: 0px;
+		.collapsible-card-edonec {
+			width: 100%;
+			.collapsible-header-edonec {
+				padding: 10px;
+				.title-text-edonec {
+					font-size: 13px;
+				}
 			}
 		}
 	}

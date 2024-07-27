@@ -42,7 +42,7 @@ const Housing = () => {
 						<Rating number={housing.rating} />
 					</div>
 				</div>
-				<div className="collapsibles">
+				<div className="collapsibles-container">
 					<Collapsible close header="Description">
 						{housing.description}
 					</Collapsible>

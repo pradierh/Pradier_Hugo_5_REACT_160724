@@ -13,27 +13,41 @@ const Collapsible = ({
 }) => {
 	const [isOpen, setIsOpen] = useState(open);
 	const [height, setHeight] = useState(open ? undefined : 0);
+	const [animationClass, setAnimationClass] = useState(
+		open ? "opening" : "closing"
+	);
 	const ref = useRef(null);
 
 	const handleFilterOpening = () => {
-		setIsOpen((prev) => !prev);
+		setIsOpen((prev) => {
+			if (prev) {
+				setAnimationClass("closing");
+			} else {
+				setAnimationClass("opening");
+			}
+			return !prev;
+		});
 	};
 
 	useEffect(() => {
-		if (!height || !isOpen || !ref.current) return undefined;
-		const resizeObserver = new ResizeObserver((entries) => {
-			setHeight(entries[0].contentRect.height);
-		});
-		resizeObserver.observe(ref.current);
-		return () => {
-			resizeObserver.disconnect();
-		};
-	}, [height, isOpen]);
+		if (isOpen) {
+			setHeight(ref.current?.getBoundingClientRect().height + 5);
+			setAnimationClass("opening");
+		} else {
+			setHeight(0);
+		}
+	}, [isOpen]);
 
 	useEffect(() => {
-		if (isOpen) setHeight(ref.current?.getBoundingClientRect().height);
-		else setHeight(0);
-	}, [isOpen]);
+		if (!height && !isOpen) {
+			const timeout = setTimeout(() => {
+				setAnimationClass("");
+			}, 300); 
+			return () => clearTimeout(timeout);
+		}
+	}, [height, isOpen]);
+
+	const iconRotationClass = isOpen ? "rotate" : "";
 
 	return (
 		<div className={collapsibleClassName}>
@@ -41,19 +55,20 @@ const Collapsible = ({
 				<div className={titleClassName}>{header}</div>
 				<button
 					type="button"
-					className={iconButtonClassName}
+					className={`${iconButtonClassName} ${iconRotationClass}`}
 					onClick={handleFilterOpening}
 				>
 					<i
-						className={`fa-solid fa-caret-up ${
-							isOpen
-								? "fa-solid fa-caret-down"
-								: "fa-solid fa-caret-up"
+						className={`fa-solid fa-chevron-up fa-2x ${
+							isOpen ? "rotate-icon" : ""
 						}`}
 					/>
 				</button>
 			</div>
-			<div className={contentClassName} style={{ height }}>
+			<div
+				className={`${contentClassName} ${animationClass}`}
+				style={{ height }}
+			>
 				<div ref={ref}>
 					<div className={contentContainerClassName}>{children}</div>
 				</div>
