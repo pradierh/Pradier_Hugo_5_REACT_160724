@@ -2,7 +2,13 @@ import React from "react";
 import Header from "../components/Global/Header";
 import Footer from "../components/Global/Footer";
 import Banner from "../components/About/Banner";
-import Collapsible from "../components/About/Collapsible";
+import Collapsible from "../components/Global/Collapsible";
+
+const content_first = `	Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées pas nos équipes.`;
+
+const content_second = `La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discrinatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.`;
+
+const content_third = `	La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locatiare, cela permet à ns équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.`;
 
 const About = () => {
 	return (
@@ -11,32 +17,17 @@ const About = () => {
 				<Header />
 				<Banner />
 				<div className="collapsibles-container">
-					<Collapsible close header="Fiabilité">
-						Les annonces postées sur Kasa garantissent une fiabilité
-						totale. Les photos sont conformes aux logements, et
-						toutes les informations sont régulièrement vérifiées pas
-						nos équipes.
+					<Collapsible title="Fiabilité">
+						<p>{content_first}</p>
 					</Collapsible>
-					<Collapsible close header="Respect">
-						La bienveillance fait partie des valeurs fondatrices de
-						Kasa. Tout comportement discrinatoire ou de perturbation
-						du voisinage entraînera une exclusion de notre
-						plateforme.
+					<Collapsible title="Respect">
+						<p>{content_second}</p>
 					</Collapsible>
-					<Collapsible close header="Service">
-						La bienveillance fait partie des valeurs fondatrices de
-						Kasa. Tout comportement discrinatoire ou de perturbation
-						du voisinage entraînera une exclusion de notre
-						plateforme.
+					<Collapsible title="Service">
+						<p>{content_second}</p>
 					</Collapsible>
-					<Collapsible close header="Sécurité">
-						La sécurité est la priorité de Kasa. Aussi bien pour nos
-						hôtes que pour les voyageurs, chaque logement correspond
-						aux critères de sécurité établis par nos services. En
-						laissant une note aussi bien à l'hôte qu'au locatiare,
-						cela permet à ns équipes de vérifier que les standards
-						sont bien respectés. Nous organisons également des
-						ateliers sur la sécurité domestique pour nos hôtes.
+					<Collapsible title="Sécurité">
+						<p>{content_third}</p>
 					</Collapsible>
 				</div>
 			</div>

@@ -12,9 +12,11 @@ body {
 }
 
 .container {
+	width: 86.11%;
+	display: flex;
+	flex-direction: column;
 	max-width: 1240px;
 	min-height: 82vh;
-	padding: 0 100px;
 }
 
 .about,
@@ -78,6 +80,75 @@ footer {
 		margin-top: 40px;
 		font-size: 24px;
 		color: white;
+	}
+}
+
+.collapsible {
+	animation: fadeIn 0.5s ease forwards;
+	font-weight: 300;
+	font-size: 18px;
+	margin: 1rem 0;
+	border-radius: 5px;
+	.collapsible-toggle {
+		font-weight: 600;
+		transition: 0.3s ease-out;
+		position: relative;
+		z-index: 2;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #ff6060;
+		color: white;
+		padding: 10px 1rem;
+		border: none;
+		cursor: pointer;
+		font-size: 1.2rem;
+		width: 100%;
+		text-align: left;
+		.fas {
+			font-size: 32px;
+			margin-right: 0.5rem;
+			transition: transform 0.3s;
+		}
+		.rotate {
+			transform: rotate(-180deg);
+		}
+	}
+	.open-toggle {
+		border-radius: 5px !important;
+		transition: 0.3s ease-out;
+	}
+	.collapsible-content {
+		background-color: #fbfbfb;
+		color: black;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+		padding: 0 20px;
+		border-radius: 5px;
+		.words-equipments {
+			p:first-child {
+				margin-top: 20px;
+			}
+			p {
+				margin: 5px 20px 5px 0px;
+			}
+		}
+		p {
+			margin-block-start: 0px;
+			margin-block-end: 0px;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			unicode-bidi: isolate;
+			margin: 20px;
+			margin-left: 0px;
+			margin-top: 28px;
+		}
+	}
+	.collapsible-content.open {
+		transition: 0.3s ease-out;
+		border-radius: 5px;
 	}
 }
 
@@ -208,75 +279,10 @@ footer {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		.collapsible {
+			width: 82.5%;
+		}
 	}
-}
-
-.fa-2x {
-	font-size: 32px;
-}
-.collapsible-card-edonec {
-	animation: fadeIn 0.5s ease forwards;
-	width: 75%;
-	border-radius: 4px;
-	margin-bottom: 1rem;
-	overflow: hidden;
-	background-color: #fbfbfb;
-}
-
-.collapsible-header-edonec {
-	background-color: #ff6060;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 13px;
-	border-radius: 10px;
-}
-
-.title-text-edonec {
-	font-weight: bold;
-	font-size: 18px;
-}
-
-.collapsible-icon-button-edonec {
-	background: none;
-	border: none;
-	cursor: pointer;
-}
-
-.collapsible-content-edonec {
-	color: black;
-	overflow: hidden;
-	transition: height 0.3s ease;
-}
-
-.collapsible-content-padding-edonec {
-	font-size: 18px;
-	padding: 1rem;
-}
-
-.fas-edonec {
-	transform: rotate(0deg);
-	transition: transform 0.3s ease;
-}
-
-.fa-chevron-down-edonec.down {
-	transform: rotate(180deg);
-}
-
-.fa-chevron-down-edonec.up {
-	transform: rotate(0deg);
-}
-.rotate-center-edonec {
-	display: inline-block;
-}
-.fa-chevron-up {
-	color: white;
-}
-.content {
-	padding: 0 18px;
-	display: none;
-	overflow: hidden;
-	background-color: #f1f1f1;
 }
 
 /* ------------------- HOUSING ------------------------ */
@@ -290,7 +296,8 @@ footer {
 		overflow: hidden;
 		margin-bottom: 30px;
 		border-radius: 25px;
-
+		display: flex;
+		justify-content: center;
 		img {
 			width: 100%;
 			height: 100%;
@@ -298,27 +305,36 @@ footer {
 			object-fit: cover;
 			border-radius: 25px;
 		}
-		.carousel__btn {
+		button {
+			background-color: Transparent;
+			background-repeat: no-repeat;
+			border: none;
+			cursor: pointer;
+			overflow: hidden;
+			outline: none;
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			background-color: rgba(0, 0, 0, 0.5);
 			color: white;
-			font-size: 1.5rem;
-			border: none;
+			font-size: 80px;
 			padding: 1rem;
-			cursor: pointer;
 			z-index: 1;
 			transition: background-color 0.3s;
 		}
-		.carousel__btn:hover {
-			background-color: rgba(0, 0, 0, 0.8);
-		}
-		.carousel__btn--prev {
+		.button_left {
 			left: 0;
 		}
-		.carousel__btn--next {
+		.button_right {
 			right: 0;
+		}
+		.carousel_index_indicator {
+			height: 95%;
+			display: flex;
+			align-items: end;
+			position: absolute;
+			span {
+				font-size: 18px;
+			}
 		}
 	}
 	.info-panel {
@@ -412,9 +428,8 @@ footer {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		.collapsible-card-edonec {
-			width: 46.8%;
-			border-radius: 10px;
+		.collapsible {
+			width: 47%;
 		}
 	}
 }
@@ -470,13 +485,6 @@ footer {
 	}
 }
 
-.collapsible-icon-button-edonec.rotate i {
-	transition: transform 0.5s ease;
-}
-.collapsible-icon-button-edonec.rotate i {
-	transform: rotate(-180deg);
-}
-
 /* --------------------- RESPONSIVTY ------------------------ */
 @media only screen and (max-width: 1439px) {
 	.home {
@@ -495,9 +503,8 @@ footer {
 /* Styles pour les écrans de taille moyenne (tablettes) */
 @media only screen and (max-width: 1024px) {
 	.container {
-		padding: 0 50px;
+		width: 89.33%;
 	}
-
 	.housing {
 		.info-panel {
 			flex-direction: column;
@@ -536,7 +543,7 @@ footer {
 			flex-direction: column;
 			width: 100%;
 			margin-top: 0px;
-			.collapsible-card-edonec {
+			.collapsible {
 				width: 100%;
 			}
 		}
@@ -544,7 +551,7 @@ footer {
 
 	.about {
 		.collapsibles-container {
-			.collapsible-card-edonec {
+			.collapsible {
 				width: 100%;
 			}
 		}
@@ -555,6 +562,7 @@ footer {
 	.home {
 		.cards-background {
 			padding-top: 0px;
+			padding-bottom: 27px;
 			background-color: white;
 			.cards-container {
 				width: 100%;
@@ -576,19 +584,15 @@ footer {
 /* Styles pour les écrans de petite taille (smartphones) */
 @media only screen and (max-width: 600px) {
 	.container {
-		max-width: 1240px;
-		min-height: 82vh;
-		padding: 0 20px;
+		width: 89.33%;
 	}
 
 	.fa-2x {
 		font-size: 26px;
 	}
 
-	.collapsible-content-padding-edonec {
-		font-size: 12px;
-	}
 	header {
+		margin-bottom: 26px;
 		height: 47px;
 		img {
 			height: 100%;
@@ -615,6 +619,7 @@ footer {
 	}
 	.home {
 		.banner {
+			margin-top: 0px;
 			margin-bottom: 22px;
 			filter: none;
 			height: 111px;
@@ -645,6 +650,12 @@ footer {
 		.carousel {
 			height: 255px;
 			margin-bottom: 15px;
+			button {
+				font-size: 24px;
+			}
+			.carousel_index_indicator {
+				display: none;
+			}
 		}
 		.info-panel {
 			flex-direction: column;
@@ -696,6 +707,9 @@ footer {
 				}
 			}
 		}
+		footer {
+			margin-top: 30px;
+		}
 	}
 
 	.notfound {
@@ -723,19 +737,38 @@ footer {
 	.about {
 		.banner {
 			height: 111px;
+			margin-bottom: 0px;
+		}
+		.collapsibles-container .collapsible:last-child {
+			margin-bottom: 30px;
 		}
 	}
 
 	.collapsibles-container {
-		flex-direction: column;
-		width: 100%;
 		margin-top: 0px;
-		.collapsible-card-edonec {
-			width: 100%;
-			.collapsible-header-edonec {
-				padding: 10px;
-				.title-text-edonec {
+		.collapsible {
+			margin-top: 20px;
+			margin-bottom: 0px;
+			.collapsible-toggle {
+				font-size: 13px;
+				padding: 7px 1rem;
+				i {
+					font-size: 10px;
+				}
+			}
+			.collapsible-content {
+				p {
 					font-size: 13px;
+				}
+				.words-equipments {
+					font-size: 13px;
+					p:first-child {
+						margin-top: 20px;
+					}
+					p {
+						font-size: 13px;
+						margin: 5px 20px 5px 0px;
+					}
 				}
 			}
 		}

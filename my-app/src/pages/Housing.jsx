@@ -7,7 +7,7 @@ import Title from "../components/Housing/Infos/Title.jsx";
 import Tags from "../components/Housing/Infos/Tags.jsx";
 import Owner from "../components/Housing/Infos/Owner.jsx";
 import Rating from "../components/Housing/Infos/Rating.jsx";
-import Collapsible from "../components/About/Collapsible.jsx";
+import Collapsible from "../components/Global/Collapsible.jsx";
 import data from "../data/data.json";
 
 const Housing = () => {
@@ -21,6 +21,17 @@ const Housing = () => {
 	if (!housing) {
 		return <div>Logement non trouvé</div>;
 	}
+	const wordParagraphs = housing.equipments.map((word, index) => (
+		<p key={index}>{word}</p>
+	));
+
+	const wordContainer = (
+		<div className="words-equipments">{wordParagraphs}</div>
+	);
+
+	console.log(wordParagraphs);
+	const description = <p>{housing.description}</p>;
+
 	return (
 		<div className="housing">
 			<div className="container">
@@ -43,12 +54,8 @@ const Housing = () => {
 					</div>
 				</div>
 				<div className="collapsibles-container">
-					<Collapsible close header="Description">
-						{housing.description}
-					</Collapsible>
-					<Collapsible close header="Equipements">
-						{housing.equipments}
-					</Collapsible>
+					<Collapsible title="Description" children={description} />
+					<Collapsible title="Equipements" children={wordContainer} />
 				</div>
 			</div>
 			<Footer />
