@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Header from "../components/Global/Header.jsx";
 import Footer from "../components/Global/Footer.jsx";
 import Carousel from "../components/Housing/Carousel.jsx";
@@ -13,10 +13,17 @@ import data from "../data/data.json";
 const Housing = () => {
 	const { id } = useParams();
 	const [housing, setHousing] = useState(null);
+
 	useEffect(() => {
 		const foundHousing = data.find((location) => location.id === id);
 		setHousing(foundHousing);
 	}, [id]);
+
+	const ids = data.map((item) => item.id);
+
+	if (!ids.includes(id)) {
+		return <Navigate to="/notfound" />;
+	}
 
 	if (!housing) {
 		return <div>Logement non trouvé</div>;
@@ -29,7 +36,6 @@ const Housing = () => {
 		<div className="words-equipments">{wordParagraphs}</div>
 	);
 
-	console.log(wordParagraphs);
 	const description = <p>{housing.description}</p>;
 
 	return (

@@ -20,6 +20,17 @@ const Carousel = ({ images }) => {
 		}
 	};
 
+	if (totalSlides + 1 == 1) {
+		return (
+			<div className="carousel">
+				<img src={images[0]} className="carousel__img" />
+				<div className="carousel_index_indicator">
+					<span>1 / 1</span>
+				</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className="carousel">
 			<button className="button_left" onClick={decrement}>
