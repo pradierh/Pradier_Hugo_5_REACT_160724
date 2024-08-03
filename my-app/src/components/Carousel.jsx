@@ -14,7 +14,6 @@ const Carousel = ({ images }) => {
 	const decrement = () => {
 		if (currentSlideIndex == 1) {
 			setActiveIndex((currentSlideIndex = totalSlides));
-			console.log("minus");
 		} else {
 			setActiveIndex(currentSlideIndex - 1);
 		}

@@ -1,8 +1,5 @@
 import React from "react";
-import Header from "../components/Global/Header";
-import Footer from "../components/Global/Footer";
-import Banner from "../components/About/Banner";
-import Collapsible from "../components/Global/Collapsible";
+import Collapsible from "../components/Collapsible";
 
 const content_first = `	Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées pas nos équipes.`;
 
@@ -13,25 +10,21 @@ const content_third = `	La sécurité est la priorité de Kasa. Aussi bien pour 
 const About = () => {
 	return (
 		<div className="about">
-			<div className="container">
-				<Header />
-				<Banner />
-				<div className="collapsibles-container">
-					<Collapsible title="Fiabilité">
-						<p>{content_first}</p>
-					</Collapsible>
-					<Collapsible title="Respect">
-						<p>{content_second}</p>
-					</Collapsible>
-					<Collapsible title="Service">
-						<p>{content_second}</p>
-					</Collapsible>
-					<Collapsible title="Sécurité">
-						<p>{content_third}</p>
-					</Collapsible>
-				</div>
+			<div className="banner"></div>
+			<div className="collapsibles-container">
+				<Collapsible title="Fiabilité">
+					<p>{content_first}</p>
+				</Collapsible>
+				<Collapsible title="Respect">
+					<p>{content_second}</p>
+				</Collapsible>
+				<Collapsible title="Service">
+					<p>{content_second}</p>
+				</Collapsible>
+				<Collapsible title="Sécurité">
+					<p>{content_third}</p>
+				</Collapsible>
 			</div>
-			<Footer />
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/LOGOcolored.svg";
+import logo from "../assets/LOGOcolored.svg";
 import { Routes, Route, Navigate, useMatch, NavLink } from "react-router-dom";
 
 function Header() {
